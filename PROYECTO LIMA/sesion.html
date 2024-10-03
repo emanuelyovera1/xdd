@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión - LIMA EXPRESS</title>
+    <link rel="shortcut icon" href="img/TIENDA.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="js/javascript.js"> </script>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="img/logo.png" alt="LIMA EXPRESS Logo" class="logo-img">
+                </a>
+            </div>
+            <div class="search-bar">
+                <form action="buscador.html" method="get">
+                    <input type="text" name="query" placeholder="Buscar productos...">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+            <div class="user-options">
+                <a href="sesion.html">Iniciar sesión</a>
+                <a href="registrarse.html">Registrarse</a>
+                <a href="invitado.html">Invitado</a>
+            </div>
+            <div class="cart">
+                <a href="carrito.html"><i class="fas fa-shopping-cart"></i></a>
+            </div>
+        </div>
+    </header>
+
+    
+    <div class="container">
+        <h1>Iniciar Sesión</h1>
+        <form action="procesar_sesion.html" method="post" class="registration-form">
+            <div class="form-group">
+                <label for="correo">Correo Electrónico:</label>
+                <input type="email" id="correo" name="correo" required>
+            </div>
+            <div class="form-group">
+                <label for="contraseña">Contraseña:</label>
+                <input type="password" id="contrasena" name="contraseña" required>
+            </div>
+            <button type="button" onclick="validar()">Iniciar Sesión</button>
+        </form>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-about">
+                <h3>Sobre Nosotros</h3>
+                <p>LIMA EXPRESS es una tienda online dedicada a ofrecer los mejores productos a los mejores precios. Nos esforzamos por brindar una experiencia de compra excepcional a nuestros clientes.</p>
+            </div>
+            <div class="footer-contact">
+                <h3>Contáctanos</h3>
+                <p>Email: contacto@limaexpress.com</p>
+                <p>Dirección: Lima, Perú</p>
+            </div>
+            <div class="footer-social">
+                <h3>Síguenos</h3>
+                <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.whatsapp.com" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+        <p>© 2024 LIMA EXPRESS. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

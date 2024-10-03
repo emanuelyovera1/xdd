@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados de Búsqueda - LIMA EXPRESS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="img/logo.png" alt="LIMA EXPRESS Logo" class="logo-img">
+                </a>
+            </div>
+            <div class="search-bar">
+                <form action="buscador.html" method="get">
+                    <input type="text" name="query" placeholder="Buscar productos...">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+            <div class="user-options">
+                <a href="sesion.html">Iniciar sesión</a>
+                <a href="registrarse.html">Registrarse</a>
+                <a href="invitado.html">Invitado</a>
+            </div>
+            <div class="cart">
+                <a href="carrito.html"><i class="fas fa-shopping-cart"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="Exclusivo.html">Exclusivo</a></li>
+            <li><a href="Nuevo.html">Nuevo</a></li>
+            <li><a href="Ofertas.html">Ofertas</a></li>
+            <li><a href="Accesorios.html">Accesorios</a></li>
+            <li><a href="Enviogratis.html">Envio Gratis</a></li>
+            <li><a href="#">Más</a>
+                <ul>
+                    <li><a href="Moda.html">Moda</a></li>
+                    <li><a href="Zapatos.html">Zapatos</a></li>
+                    <li><a href="Ofertas.html">Ofertas</a></li>
+                    <li><a href="Enviogratis.html">Envio Gratis</a></li>
+                    <li><a href="Accesorios.html">Accesorios</a></li>
+                    <li><a href="herramientas.html">Herramientas</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h1>Resultados de Búsqueda</h1>
+        <p>Mostrando resultados para: <strong id="search-query"></strong></p>
+        <ul id="search-results"></ul>
+    </div>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-about">
+                <h3>Sobre Nosotros</h3>
+                <p>LIMA EXPRESS es una tienda online dedicada a ofrecer los mejores productos a los mejores precios. Nos esforzamos por brindar una experiencia de compra excepcional a nuestros clientes.</p>
+            </div>
+            <div class="footer-contact">
+                <h3>Contáctanos</h3>
+                <p>Email: contacto@limaexpress.com</p>
+                <p>Dirección: Lima, Perú</p>
+            </div>
+            <div class="footer-social">
+                <h3>Síguenos</h3>
+                <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.whatsapp.com" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+        <p>© 2024 LIMA EXPRESS. Todos los derechos reservados.</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const query = urlParams.get('query');
+            document.getElementById('search-query').textContent = query;
+
+            const items = [
+                'Exclusivo',
+                'Nuevo',
+                'Ofertas',
+                'Accesorios',
+                'Envio Gratis',
+                'Moda',
+                'Zapatos',
+                'Herramientas'
+            ];
+
+            const results = items.filter(item => item.toLowerCase().includes(query.toLowerCase()));
+            const resultsContainer = document.getElementById('search-results');
+
+            if (results.length > 0) {
+                results.forEach(result => {
+                    const li = document.createElement('li');
+                    li.textContent = result;
+                    resultsContainer.appendChild(li);
+                });
+            } else {
+                resultsContainer.textContent = 'No se encontraron resultados.';
+            }
+        });
+    </script>
+</body>
+</html>
